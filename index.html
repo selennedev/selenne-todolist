@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Selenne — Modelação</title>
+
+<title>Selenne — Produção</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Patrick+Hand&display=swap');
 
 :root{
@@ -16,6 +19,8 @@
   --pink:#f7d8ed;
   --ink:#3c2258;
   --line:#d9c5ea;
+  --blue:#5f75c9;
+  --green:#69a56d;
 }
 
 *{
@@ -27,9 +32,18 @@ body{
   min-height:100vh;
   color:var(--ink);
   font-family:'DM Sans',sans-serif;
+
   background:
-    radial-gradient(circle at 7% 3%,#f4eaff 0 12%,transparent 27%),
-    radial-gradient(circle at 94% 20%,#e7d4fa 0 8%,transparent 22%),
+    radial-gradient(
+      circle at 7% 3%,
+      #f4eaff 0 12%,
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 94% 20%,
+      #e7d4fa 0 8%,
+      transparent 22%
+    ),
     #fdfaff;
 }
 
@@ -39,37 +53,65 @@ body{
   padding:32px 0 50px;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
   position:relative;
   overflow:hidden;
   min-height:205px;
+
   padding:30px 255px 27px 34px;
+
   border-radius:28px;
-  background:linear-gradient(115deg,#f7edff,#e1cafe);
+
+  background:
+    linear-gradient(
+      115deg,
+      #f7edff,
+      #e1cafe
+    );
+
   border:2px solid #dac1f0;
-  box-shadow:0 13px 30px #5621841d;
+
+  box-shadow:
+    0 13px 30px #5621841d;
 }
 
 .hero:before{
   content:'✦  ♡  ✧  ♡  ✦';
+
   position:absolute;
   right:24px;
   top:21px;
+
   color:#ad77da;
   font-size:27px;
   letter-spacing:7px;
+
   transform:rotate(-9deg);
 }
 
-h1,h2{
+h1,
+h2{
   margin:0;
+
   font-family:'Patrick Hand',cursive;
   font-weight:400;
 }
 
 h1{
   color:var(--deep);
-  font-size:clamp(3.2rem,8vw,5.8rem);
+
+  font-size:
+    clamp(
+      3.2rem,
+      8vw,
+      5.8rem
+    );
+
   line-height:.8;
 }
 
@@ -80,56 +122,118 @@ h1{
 
 .badge{
   display:inline-block;
+
   margin-top:17px;
+
   padding:7px 13px;
+
   border-radius:999px;
+
   background:#fff9;
+
   color:#62348e;
+
   font-size:.78rem;
   font-weight:700;
 }
 
+
+/* =========================
+   RUMI
+========================= */
+
 .rumi{
   position:absolute;
+
   right:38px;
   bottom:19px;
+
   width:166px;
   height:127px;
-  border-radius:56% 44% 52% 48% / 60% 55% 45% 40%;
+
+  border-radius:
+    56% 44% 52% 48% /
+    60% 55% 45% 40%;
+
   transform:rotate(-5deg);
+
   background:
-    radial-gradient(circle at 50% 46%,#f5d5c8 0 26%,transparent 27%),
-    radial-gradient(ellipse at 51% 23%,#8031c2 0 35%,transparent 36%),
-    radial-gradient(ellipse at 15% 40%,#952bd4 0 23%,transparent 24%),
-    radial-gradient(ellipse at 87% 37%,#9b3ce0 0 23%,transparent 24%);
-  filter:drop-shadow(0 8px 5px #44176d30);
+
+    radial-gradient(
+      circle at 50% 46%,
+      #f5d5c8 0 26%,
+      transparent 27%
+    ),
+
+    radial-gradient(
+      ellipse at 51% 23%,
+      #8031c2 0 35%,
+      transparent 36%
+    ),
+
+    radial-gradient(
+      ellipse at 15% 40%,
+      #952bd4 0 23%,
+      transparent 24%
+    ),
+
+    radial-gradient(
+      ellipse at 87% 37%,
+      #9b3ce0 0 23%,
+      transparent 24%
+    );
+
+  filter:
+    drop-shadow(
+      0 8px 5px #44176d30
+    );
 }
 
 .rumi:after{
   content:'RUMI ♡';
+
   position:absolute;
+
   right:-13px;
   bottom:2px;
+
   padding:5px 8px;
+
   border-radius:999px;
+
   background:#fff;
+
   color:#66209f;
+
   font-size:.68rem;
   font-weight:700;
 }
 
+
+/* =========================
+   LAYOUT
+========================= */
+
 .layout{
   display:grid;
-  grid-template-columns:1.4fr .8fr;
+
+  grid-template-columns:
+    1.4fr .8fr;
+
   gap:22px;
+
   margin-top:22px;
 }
 
 .card{
   padding:23px;
+
   border-radius:22px;
+
   background:#fffdfd;
-  box-shadow:0 7px 19px #48206f12;
+
+  box-shadow:
+    0 7px 19px #48206f12;
 }
 
 .schedule{
@@ -138,90 +242,185 @@ h1{
 
 .card h2{
   font-size:2.1rem;
+
   color:#582487;
+
   line-height:.9;
 }
 
 .sub{
   margin:7px 0 18px;
+
   color:#8866a5;
+
   font-size:.83rem;
 }
 
+
+/* =========================
+   BLOCOS
+========================= */
+
 .slot{
   margin-bottom:14px;
-  padding:16px 18px 14px 23px;
+
+  padding:
+    16px
+    18px
+    14px
+    23px;
+
   background:#fbf7ff;
-  border-left:8px solid #b875dc;
-  border-radius:0 14px 14px 0;
+
+  border-left:
+    8px solid
+    #b875dc;
+
+  border-radius:
+    0 14px 14px 0;
 }
 
-.slot:nth-of-type(2){
-  border-color:#e59bc7;
+
+/* Segundo bloco */
+
+.slot.production{
+  border-color:#5f75c9;
+
+  background:
+    linear-gradient(
+      135deg,
+      #faf8ff,
+      #f3f1ff
+    );
+}
+
+
+/* Terceiro bloco */
+
+.slot.animals{
+  border-color:#69a56d;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fbfff9,
+      #f0f9ef
+    );
 }
 
 .time{
   font-family:'Patrick Hand';
+
   font-size:1.45rem;
+
   color:#512484;
 }
 
 .owner{
   margin-left:8px;
+
   color:#8e66aa;
+
   font-size:.75rem;
+
   font-family:'DM Sans';
+
   font-weight:700;
+
   letter-spacing:.04em;
 }
 
 .slot h3{
-  margin:7px 0 8px;
+  margin:
+    7px
+    0
+    8px;
+
   font-size:1rem;
 }
 
+
+/* =========================
+   TASKS
+========================= */
+
 .task{
   display:grid;
-  grid-template-columns:20px 1fr;
+
+  grid-template-columns:
+    20px 1fr;
+
   gap:8px;
+
   align-items:center;
+
   padding:6px 0;
+
   font-size:.9rem;
 }
 
 .task input{
   appearance:none;
+
   width:17px;
   height:17px;
+
   margin:0;
-  border:2px solid #a178bf;
+
+  border:
+    2px solid
+    #a178bf;
+
   border-radius:5px;
+
   background:#fff;
+
   cursor:pointer;
 }
 
 .task input:checked{
-  border-color:var(--purple);
-  background:var(--purple);
+  border-color:
+    var(--purple);
+
+  background:
+    var(--purple);
 }
 
 .task input:checked:after{
   content:'✓';
+
   display:block;
+
   color:#fff;
+
   font-weight:700;
+
   font-size:12px;
+
   line-height:13px;
+
   text-align:center;
 }
 
 .task:has(input:checked) span{
-  text-decoration:line-through;
+  text-decoration:
+    line-through;
+
   color:#aa91b8;
 }
 
+
+/* =========================
+   META
+========================= */
+
 .goal{
-  background:linear-gradient(145deg,#f8eeff,#ead5ff);
+  background:
+    linear-gradient(
+      145deg,
+      #f8eeff,
+      #ead5ff
+    );
 }
 
 .goal h2{
@@ -232,8 +431,15 @@ h1{
   line-height:1.55;
 }
 
+
+/* =========================
+   LEMBRETES
+========================= */
+
 .targets{
-  background:var(--deep);
+  background:
+    var(--deep);
+
   color:#fff;
 }
 
@@ -247,11 +453,18 @@ h1{
 
 .target{
   display:flex;
+
   gap:9px;
+
   align-items:center;
+
   margin-top:10px;
+
   padding-bottom:8px;
-  border-bottom:1px dashed #ffffff55;
+
+  border-bottom:
+    1px dashed
+    #ffffff55;
 }
 
 .target span{
@@ -260,9 +473,13 @@ h1{
 
 .target input{
   width:100%;
+
   border:0;
+
   outline:0;
+
   background:transparent;
+
   color:white;
 }
 
@@ -272,60 +489,112 @@ h1{
 
 .add{
   margin-top:12px;
+
   border:0;
+
   padding:7px 11px;
+
   border-radius:9px;
+
   background:#b06bd1;
+
   color:#fff;
+
   font-weight:700;
+
   cursor:pointer;
 }
 
+
+/* =========================
+   PROGRESSO
+========================= */
+
 .progress-label{
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   margin-top:20px;
   margin-bottom:7px;
+
   color:#7e5e99;
+
   font-size:.84rem;
+
   font-weight:700;
 }
 
 .progress{
   height:11px;
+
   border-radius:999px;
+
   overflow:hidden;
+
   background:#eadcf5;
 }
 
 .progress div{
   height:100%;
+
   width:0;
-  background:linear-gradient(90deg,#7c42bd,#c58ce8);
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c42bd,
+      #c58ce8
+    );
+
   transition:.25s;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer{
   text-align:center;
+
   color:#8869a2;
+
   font-size:.81rem;
+
   margin-top:21px;
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:740px){
 
   .page{
-    width:min(100% - 20px,600px);
+    width:
+      min(
+        100% - 20px,
+        600px
+      );
+
     padding-top:12px;
   }
 
   .hero{
     min-height:235px;
-    padding:27px 21px 124px;
+
+    padding:
+      27px
+      21px
+      124px;
   }
 
   .rumi{
     right:24px;
+
     width:137px;
     height:105px;
   }
@@ -341,74 +610,128 @@ h1{
   .card{
     padding:18px;
   }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <main class="page">
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="hero">
+
   <h1>Selenne</h1>
 
   <p>
-    Hoje é dia de modelação. Um asset por vez, sem dispersão.
+    Modelação, texturização e produção.
+    Um asset por vez, sem dispersão.
   </p>
 
-  <span class="badge" id="date"></span>
+  <span
+    class="badge"
+    id="date">
+  </span>
 
   <div
     class="rumi"
     role="img"
     aria-label="Detalhe decorativo inspirado na Rumi">
   </div>
+
 </header>
+
 
 <section class="layout">
 
+
+<!-- =========================
+     MISSÕES
+========================= -->
+
 <article class="card schedule">
 
-  <h2>Missões de hoje ✦</h2>
+  <h2>
+    Missões da produção ✦
+  </h2>
 
   <p class="sub">
-    Foco exclusivo: MODELAGEM
+    Modelagem + texturização + produção
   </p>
 
   <div id="slots"></div>
 
+
   <div class="progress-label">
-    <span>Progresso da modelação</span>
-    <span id="percent">0%</span>
+
+    <span>
+      Progresso geral
+    </span>
+
+    <span id="percent">
+      0%
+    </span>
+
   </div>
 
+
   <div class="progress">
+
     <div id="bar"></div>
+
   </div>
 
 </article>
 
+
+<!-- =========================
+     META
+========================= -->
 
 <article class="card goal">
 
-  <h2>Meta da Selenne ♡</h2>
+  <h2>
+    Meta da Selenne ♡
+  </h2>
 
   <p>
-    Finalizar a modelagem da picareta do Phey
-    e entregar os 6 assets da comissão do mercado.
+    Avançar os projetos de Phey,
+    Mercado, Gato e Animais,
+    mantendo a sequência:
+    <strong>
+      modelagem → texturização → aprovação → orçamento.
+    </strong>
   </p>
 
   <p>
-    <strong>Sem texturização hoje.</strong>
-    Primeiro a forma, depois o acabamento.
+    <strong>
+      Prioridade crítica:
+    </strong>
+
+    texturizar o gato cartoon
+    antes de enviar o orçamento do
+    GATO e dos ANIMAIS para aprovação.
   </p>
 
 </article>
 
 
+<!-- =========================
+     LEMBRETES
+========================= -->
+
 <article class="card targets">
 
-  <h2>Lembretes</h2>
+  <h2>
+    Lembretes
+  </h2>
 
   <p class="sub">
     Prioridades extras
@@ -420,32 +743,56 @@ h1{
     type="button"
     class="add"
     id="add">
+
     + lembrete
+
   </button>
 
 </article>
 
+
 </section>
 
+
 <p class="footer">
-  Tudo salvo neste navegador. Hoje é modelação, Selenne. ✦
+  Tudo salvo neste navegador.
+  Produção organizada, cabeça leve. ✦
 </p>
+
 
 </main>
 
 
 <script>
 
-const key = 'selenne-modelacao-v3';
+
+/* =========================
+   STORAGE
+========================= */
+
+const key =
+  'selenne-producao-v4';
+
 
 const saved =
-  JSON.parse(localStorage.getItem(key) || '{}');
+  JSON.parse(
+    localStorage.getItem(key) || '{}'
+  );
+
 
 const checked =
   saved.checked || {};
 
 
+/* =========================
+   LISTA DE TAREFAS
+========================= */
+
 const data = [
+
+  /* -------------------------
+     MODELAGEM
+  ------------------------- */
 
   [
     '🪨 PHEY',
@@ -454,6 +801,7 @@ const data = [
       'Modelar picareta'
     ]
   ],
+
 
   [
     '🥩 COMISSÃO MERCADO',
@@ -466,10 +814,44 @@ const data = [
       'Modelar Bakery Shelf',
       'Modelar Bread Basket'
     ]
+  ],
+
+
+  /* -------------------------
+     TEXTURIZAÇÃO
+  ------------------------- */
+
+  [
+    '🎨 TEXTURIZAÇÃO',
+    'Produção',
+    [
+      'Phey — texturizar gema; studs',
+      'Phey — texturizar picareta; studs',
+      'Mercado — modelar a maioria dos assets do mercado',
+      'Montar orçamento do GATO e dos ANIMAIS e enviar — primeiro texturizar o gato para receber a aprovação',
+      'Gato — texturizar gato cartoon'
+    ]
+  ],
+
+
+  /* -------------------------
+     ANIMAIS
+  ------------------------- */
+
+  [
+    '🐾 ANIMAIS',
+    'Produção',
+    [
+      'Começar os 107 animais com os meninos'
+    ]
   ]
 
 ];
 
+
+/* =========================
+   RENDERIZAÇÃO
+========================= */
 
 const slots =
   document.getElementById('slots');
@@ -480,40 +862,87 @@ data.forEach((x,i)=>{
   const e =
     document.createElement('section');
 
-  e.className = 'slot';
+
+  e.className =
+    'slot';
+
+
+  /*
+    Diferencia visualmente
+    os blocos de produção.
+  */
+
+  if(
+    x[0].includes('TEXTURIZAÇÃO')
+  ){
+
+    e.classList.add(
+      'production'
+    );
+
+  }
+
+
+  if(
+    x[0].includes('ANIMAIS')
+  ){
+
+    e.classList.add(
+      'animals'
+    );
+
+  }
+
 
   e.innerHTML = `
+
     <div class="time">
+
       ${x[0]}
+
       <span class="owner">
         ${x[1]}
       </span>
+
     </div>
 
+
     <h3>
-      Checklist de modelagem
+      Checklist de produção
     </h3>
+
   `;
 
 
   x[2].forEach((t,j)=>{
 
-    const n = i + '-' + j;
+    const n =
+      i + '-' + j;
+
 
     const row =
-      document.createElement('label');
+      document.createElement(
+        'label'
+      );
 
-    row.className = 'task';
+
+    row.className =
+      'task';
+
 
     row.innerHTML = `
+
       <input
         type="checkbox"
-        ${checked[n] ? 'checked' : ''}
+        ${checked[n]
+          ? 'checked'
+          : ''}
       >
 
       <span>
         ${t}
       </span>
+
     `;
 
 
@@ -525,6 +954,7 @@ data.forEach((x,i)=>{
           z.target.checked;
 
         save();
+
         progress();
 
       };
@@ -540,6 +970,10 @@ data.forEach((x,i)=>{
 });
 
 
+/* =========================
+   SALVAR
+========================= */
+
 function save(){
 
   localStorage.setItem(
@@ -551,11 +985,17 @@ function save(){
       checked,
 
       targets:
+
         [
           ...document
-            .querySelectorAll('.target-input')
+            .querySelectorAll(
+              '.target-input'
+            )
         ]
-        .map(x => x.value)
+
+        .map(
+          x => x.value
+        )
 
     })
 
@@ -564,75 +1004,127 @@ function save(){
 }
 
 
+/* =========================
+   PROGRESSO
+========================= */
+
 function progress(){
 
   const all =
     document
-      .querySelectorAll('.task input')
+      .querySelectorAll(
+        '.task input'
+      )
       .length;
+
 
   const done =
     [
       ...document
-        .querySelectorAll('.task input:checked')
+        .querySelectorAll(
+          '.task input:checked'
+        )
     ]
     .length;
 
+
   const p =
     all
-      ? Math.round(done / all * 100)
+      ? Math.round(
+          done / all * 100
+        )
       : 0;
 
-  document
-    .getElementById('percent')
-    .textContent = p + '%';
 
   document
-    .getElementById('bar')
-    .style.width = p + '%';
+    .getElementById(
+      'percent'
+    )
+    .textContent =
+      p + '%';
+
+
+  document
+    .getElementById(
+      'bar'
+    )
+    .style.width =
+      p + '%';
 
 }
 
 
+/* =========================
+   LEMBRETES
+========================= */
+
 const targets =
-  document.getElementById('targets');
+  document.getElementById(
+    'targets'
+  );
 
 
 function target(v=''){
 
   const e =
-    document.createElement('label');
+    document.createElement(
+      'label'
+    );
 
-  e.className = 'target';
+
+  e.className =
+    'target';
+
 
   e.innerHTML = `
-    <span>✦</span>
+
+    <span>
+      ✦
+    </span>
 
     <input
       class="target-input"
       placeholder="Novo lembrete..."
     >
+
   `;
 
-  e.querySelector('input').value = v;
+
+  e
+    .querySelector('input')
+    .value = v;
+
 
   e
     .querySelector('input')
     .oninput = save;
+
 
   targets.append(e);
 
 }
 
 
+/* =========================
+   LEMBRETES PADRÃO
+========================= */
+
 (
-  saved.targets || [
-    'Começar pelo Phey',
-    'Depois iniciar os 6 assets do mercado'
+  saved.targets ||
+
+  [
+    'Texturizar o gato antes do orçamento',
+    'Enviar orçamento do GATO e dos ANIMAIS após aprovação',
+    'Alinhar os 107 animais com os meninos'
   ]
+
 )
 .forEach(target);
 
+
+/* =========================
+   BOTÃO LEMBRETE
+========================= */
 
 document
   .getElementById('add')
@@ -640,15 +1132,21 @@ document
 
     target();
 
+
     targets
       .lastElementChild
       .querySelector('input')
       .focus();
 
+
     save();
 
   };
 
+
+/* =========================
+   INICIALIZAÇÃO
+========================= */
 
 progress();
 
@@ -656,15 +1154,20 @@ progress();
 document
   .getElementById('date')
   .textContent =
-    new Intl.DateTimeFormat(
-      'pt-BR',
-      {
-        weekday:'long',
-        day:'numeric',
-        month:'long'
-      }
-    )
-    .format(new Date());
+
+  new Intl.DateTimeFormat(
+    'pt-BR',
+    {
+      weekday:'long',
+      day:'numeric',
+      month:'long'
+    }
+  )
+
+  .format(
+    new Date()
+  );
+
 
 </script>
 
