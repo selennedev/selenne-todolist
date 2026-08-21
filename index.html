@@ -1,6 +1,672 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Selenne — Texturas</title><style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Patrick+Hand&display=swap');:root{--purple:#6c32ad;--deep:#3e1d66;--lilac:#e9dbff;--soft:#fdfaff;--pink:#f7d8ed;--ink:#3c2258;--line:#d9c5ea}*{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--ink);font-family:'DM Sans',sans-serif;background:radial-gradient(circle at 7% 3%,#f4eaff 0 12%,transparent 27%),radial-gradient(circle at 94% 20%,#e7d4fa 0 8%,transparent 22%),#fdfaff}.page{width:min(1100px,calc(100% - 32px));margin:auto;padding:32px 0 50px}.hero{position:relative;overflow:hidden;min-height:205px;padding:30px 255px 27px 34px;border-radius:28px;background:linear-gradient(115deg,#f7edff,#e1cafe);border:2px solid #dac1f0;box-shadow:0 13px 30px #5621841d}.hero:before{content:'✦  ♡  ✧  ♡  ✦';position:absolute;right:24px;top:21px;color:#ad77da;font-size:27px;letter-spacing:7px;transform:rotate(-9deg)}h1,h2{margin:0;font-family:'Patrick Hand',cursive;font-weight:400}h1{color:var(--deep);font-size:clamp(3.2rem,8vw,5.8rem);line-height:.8}.hero p{margin:13px 0 0;color:#704d93}.badge{display:inline-block;margin-top:17px;padding:7px 13px;border-radius:999px;background:#fff9;color:#62348e;font-size:.78rem;font-weight:700}.rumi{position:absolute;right:38px;bottom:19px;width:166px;height:127px;border-radius:56% 44% 52% 48% / 60% 55% 45% 40%;transform:rotate(-5deg);background:radial-gradient(circle at 50% 46%,#f5d5c8 0 26%,transparent 27%),radial-gradient(ellipse at 51% 23%,#8031c2 0 35%,transparent 36%),radial-gradient(ellipse at 15% 40%,#952bd4 0 23%,transparent 24%),radial-gradient(ellipse at 87% 37%,#9b3ce0 0 23%,transparent 24%);filter:drop-shadow(0 8px 5px #44176d30)}.rumi:after{content:'RUMI ♡';position:absolute;right:-13px;bottom:2px;padding:5px 8px;border-radius:999px;background:#fff;color:#66209f;font-size:.68rem;font-weight:700}.layout{display:grid;grid-template-columns:1.4fr .8fr;gap:22px;margin-top:22px}.card{padding:23px;border-radius:22px;background:#fffdfd;box-shadow:0 7px 19px #48206f12}.schedule{grid-row:span 2}.card h2{font-size:2.1rem;color:#582487;line-height:.9}.sub{margin:7px 0 18px;color:#8866a5;font-size:.83rem}.slot{margin-bottom:11px;padding:14px 16px 12px 23px;background:#fbf7ff;border-left:8px solid #b875dc}.slot:nth-of-type(2){border-color:#e59bc7}.slot:nth-of-type(3){border-color:#8c62ca}.slot:nth-of-type(4){border-color:#f0b85f}.slot:nth-of-type(5){border-color:#6333a2}.time{font-family:'Patrick Hand';font-size:1.45rem;color:#512484}.owner{margin-left:8px;color:#8e66aa;font-size:.75rem;font-family:'DM Sans';font-weight:700;letter-spacing:.04em}.slot h3{margin:7px 0 5px;font-size:1rem}.task{display:grid;grid-template-columns:20px 1fr;gap:8px;align-items:center;padding:4px 0;font-size:.9rem}.task input{appearance:none;width:17px;height:17px;margin:0;border:2px solid #a178bf;border-radius:5px;background:#fff;cursor:pointer}.task input:checked{border-color:var(--purple);background:var(--purple)}.task input:checked:after{content:'✓';display:block;color:#fff;font-weight:700;font-size:12px;line-height:13px;text-align:center}.task:has(input:checked) span{text-decoration:line-through;color:#aa91b8}.goal{background:linear-gradient(145deg,#f8eeff,#ead5ff)}.goal h2{font-size:2.4rem}.goal p{line-height:1.55}.targets{background:var(--deep);color:#fff}.targets h2{color:#fff}.targets .sub{color:#d8bff0}.target{display:flex;gap:9px;align-items:center;margin-top:10px;padding-bottom:8px;border-bottom:1px dashed #ffffff55}.target span{color:#e2baff}.target input{width:100%;border:0;outline:0;background:transparent;color:white}.add{margin-top:12px;border:0;padding:7px 11px;border-radius:9px;background:#b06bd1;color:#fff;font-weight:700;cursor:pointer}.progress-label{display:flex;justify-content:space-between;margin-top:18px;margin-bottom:7px;color:#7e5e99;font-size:.84rem;font-weight:700}.progress{height:11px;border-radius:999px;overflow:hidden;background:#eadcf5}.progress div{height:100%;width:0;background:linear-gradient(90deg,#7c42bd,#c58ce8);transition:.25s}.footer{text-align:center;color:#8869a2;font-size:.81rem;margin-top:21px}@media(max-width:740px){.page{width:min(100% - 20px,600px);padding-top:12px}.hero{min-height:235px;padding:27px 21px 124px}.rumi{right:24px;width:137px;height:105px}.layout{grid-template-columns:1fr}.schedule{grid-row:auto}.card{padding:18px}}
-</style></head><body><main class="page"><header class="hero"><h1>Selenne</h1><p>Um toque de magia, acabamento e foco em cada asset.</p><span class="badge" id="date"></span><div class="rumi" role="img" aria-label="Detalhe decorativo inspirado na Rumi"></div></header><section class="layout"><article class="card schedule"><h2>Missões da noite ✦</h2><p class="sub">06:30 → 19:30 </p><div id="slots"></div><div class="progress-label"><span>Progresso do dia</span><span id="percent">0%</span></div><div class="progress"><div id="bar"></div></div></article><article class="card goal"><h2>Meta da Selenne ♡</h2><p>15 ovos texturizados · Golin finalizado · Minérios encaminhados · Texturização das armas iniciada.</p></article><article class="card targets"><h2>Lembretes</h2><p class="sub">Prioridades extras</p><div id="targets"></div><button type="button" class="add" id="add">+ lembrete</button></article></section><p class="footer">Tudo salvo neste navegador. Você consegue, Selenne! ✦</p></main><script>
-const key='selenne-tarefas-v2',saved=JSON.parse(localStorage.getItem(key)||'{}'),checked=saved.checked||{};const data=[['🦀 MY CRAB FARM','Selenne — produção',['Texturizar caranguejos — Selenne / Biell','Exportar ovos Crab','Criar conversor do projeto Crab','Fazer de manhã os Food gerados']],['🪨 PHEY','Textura e modelagem',['Texturizar Gems','Modelar + texturizar picaretas']],['Mockup Voxel','Textura e modelagem',['Texturizar voxel foods','Modelar + texturizar']],['📋 COMERCIAL / ORGANIZAÇÃO','Comunicação e planejamento',['Chamar equipe do GUN WATER para pedir referências','Planejar com a equipe o mapa do lobby','Participar do orçamento do lobby','Organizar explicação e definir o que Selenne + Sexta-feira + Pedro precisam fazer de acordo com o Twitter']]];const slots=document.getElementById('slots');data.forEach((x,i)=>{let e=document.createElement('section');e.className='slot';e.innerHTML=`<div class="time">${x[0]} <span class="owner">${x[1]}</span></div><h3>Checklist de tarefas</h3>`;x[2].forEach((t,j)=>{let n=i+'-'+j,row=document.createElement('label');row.className='task';row.innerHTML=`<input type="checkbox" ${checked[n]?'checked':''}><span>${t}</span>`;row.querySelector('input').onchange=z=>{checked[n]=z.target.checked;save();progress()};e.append(row)});slots.append(e)});function save(){localStorage.setItem(key,JSON.stringify({checked,targets:[...document.querySelectorAll('.target-input')].map(x=>x.value)}))}function progress(){let all=document.querySelectorAll('.task input').length,done=[...document.querySelectorAll('.task input:checked')].length,p=Math.round(done/all*100);percent.textContent=p+'%';bar.style.width=p+'%'}const targets=document.getElementById('targets');function target(v=''){let e=document.createElement('label');e.className='target';e.innerHTML='<span>✦</span><input class="target-input" placeholder="Novo lembrete...">';e.querySelector('input').value=v;e.querySelector('input').oninput=save;targets.append(e)};(saved.targets||['Começar pelos Food gerados de manhã','Alinhar a divisão com a equipe']).forEach(target);add.onclick=()=>{target();targets.lastElementChild.querySelector('input').focus();save()};progress();date.textContent=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long'}).format(new Date());
-</script></body></html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Selenne — Modelação</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Patrick+Hand&display=swap');
+
+:root{
+  --purple:#6c32ad;
+  --deep:#3e1d66;
+  --lilac:#e9dbff;
+  --soft:#fdfaff;
+  --pink:#f7d8ed;
+  --ink:#3c2258;
+  --line:#d9c5ea;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  background:
+    radial-gradient(circle at 7% 3%,#f4eaff 0 12%,transparent 27%),
+    radial-gradient(circle at 94% 20%,#e7d4fa 0 8%,transparent 22%),
+    #fdfaff;
+}
+
+.page{
+  width:min(1100px,calc(100% - 32px));
+  margin:auto;
+  padding:32px 0 50px;
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  min-height:205px;
+  padding:30px 255px 27px 34px;
+  border-radius:28px;
+  background:linear-gradient(115deg,#f7edff,#e1cafe);
+  border:2px solid #dac1f0;
+  box-shadow:0 13px 30px #5621841d;
+}
+
+.hero:before{
+  content:'✦  ♡  ✧  ♡  ✦';
+  position:absolute;
+  right:24px;
+  top:21px;
+  color:#ad77da;
+  font-size:27px;
+  letter-spacing:7px;
+  transform:rotate(-9deg);
+}
+
+h1,h2{
+  margin:0;
+  font-family:'Patrick Hand',cursive;
+  font-weight:400;
+}
+
+h1{
+  color:var(--deep);
+  font-size:clamp(3.2rem,8vw,5.8rem);
+  line-height:.8;
+}
+
+.hero p{
+  margin:13px 0 0;
+  color:#704d93;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:17px;
+  padding:7px 13px;
+  border-radius:999px;
+  background:#fff9;
+  color:#62348e;
+  font-size:.78rem;
+  font-weight:700;
+}
+
+.rumi{
+  position:absolute;
+  right:38px;
+  bottom:19px;
+  width:166px;
+  height:127px;
+  border-radius:56% 44% 52% 48% / 60% 55% 45% 40%;
+  transform:rotate(-5deg);
+  background:
+    radial-gradient(circle at 50% 46%,#f5d5c8 0 26%,transparent 27%),
+    radial-gradient(ellipse at 51% 23%,#8031c2 0 35%,transparent 36%),
+    radial-gradient(ellipse at 15% 40%,#952bd4 0 23%,transparent 24%),
+    radial-gradient(ellipse at 87% 37%,#9b3ce0 0 23%,transparent 24%);
+  filter:drop-shadow(0 8px 5px #44176d30);
+}
+
+.rumi:after{
+  content:'RUMI ♡';
+  position:absolute;
+  right:-13px;
+  bottom:2px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#fff;
+  color:#66209f;
+  font-size:.68rem;
+  font-weight:700;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:22px;
+  margin-top:22px;
+}
+
+.card{
+  padding:23px;
+  border-radius:22px;
+  background:#fffdfd;
+  box-shadow:0 7px 19px #48206f12;
+}
+
+.schedule{
+  grid-row:span 2;
+}
+
+.card h2{
+  font-size:2.1rem;
+  color:#582487;
+  line-height:.9;
+}
+
+.sub{
+  margin:7px 0 18px;
+  color:#8866a5;
+  font-size:.83rem;
+}
+
+.slot{
+  margin-bottom:14px;
+  padding:16px 18px 14px 23px;
+  background:#fbf7ff;
+  border-left:8px solid #b875dc;
+  border-radius:0 14px 14px 0;
+}
+
+.slot:nth-of-type(2){
+  border-color:#e59bc7;
+}
+
+.time{
+  font-family:'Patrick Hand';
+  font-size:1.45rem;
+  color:#512484;
+}
+
+.owner{
+  margin-left:8px;
+  color:#8e66aa;
+  font-size:.75rem;
+  font-family:'DM Sans';
+  font-weight:700;
+  letter-spacing:.04em;
+}
+
+.slot h3{
+  margin:7px 0 8px;
+  font-size:1rem;
+}
+
+.task{
+  display:grid;
+  grid-template-columns:20px 1fr;
+  gap:8px;
+  align-items:center;
+  padding:6px 0;
+  font-size:.9rem;
+}
+
+.task input{
+  appearance:none;
+  width:17px;
+  height:17px;
+  margin:0;
+  border:2px solid #a178bf;
+  border-radius:5px;
+  background:#fff;
+  cursor:pointer;
+}
+
+.task input:checked{
+  border-color:var(--purple);
+  background:var(--purple);
+}
+
+.task input:checked:after{
+  content:'✓';
+  display:block;
+  color:#fff;
+  font-weight:700;
+  font-size:12px;
+  line-height:13px;
+  text-align:center;
+}
+
+.task:has(input:checked) span{
+  text-decoration:line-through;
+  color:#aa91b8;
+}
+
+.goal{
+  background:linear-gradient(145deg,#f8eeff,#ead5ff);
+}
+
+.goal h2{
+  font-size:2.4rem;
+}
+
+.goal p{
+  line-height:1.55;
+}
+
+.targets{
+  background:var(--deep);
+  color:#fff;
+}
+
+.targets h2{
+  color:#fff;
+}
+
+.targets .sub{
+  color:#d8bff0;
+}
+
+.target{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  margin-top:10px;
+  padding-bottom:8px;
+  border-bottom:1px dashed #ffffff55;
+}
+
+.target span{
+  color:#e2baff;
+}
+
+.target input{
+  width:100%;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:white;
+}
+
+.target input::placeholder{
+  color:#cdb4e3;
+}
+
+.add{
+  margin-top:12px;
+  border:0;
+  padding:7px 11px;
+  border-radius:9px;
+  background:#b06bd1;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.progress-label{
+  display:flex;
+  justify-content:space-between;
+  margin-top:20px;
+  margin-bottom:7px;
+  color:#7e5e99;
+  font-size:.84rem;
+  font-weight:700;
+}
+
+.progress{
+  height:11px;
+  border-radius:999px;
+  overflow:hidden;
+  background:#eadcf5;
+}
+
+.progress div{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#7c42bd,#c58ce8);
+  transition:.25s;
+}
+
+.footer{
+  text-align:center;
+  color:#8869a2;
+  font-size:.81rem;
+  margin-top:21px;
+}
+
+@media(max-width:740px){
+
+  .page{
+    width:min(100% - 20px,600px);
+    padding-top:12px;
+  }
+
+  .hero{
+    min-height:235px;
+    padding:27px 21px 124px;
+  }
+
+  .rumi{
+    right:24px;
+    width:137px;
+    height:105px;
+  }
+
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .schedule{
+    grid-row:auto;
+  }
+
+  .card{
+    padding:18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<header class="hero">
+  <h1>Selenne</h1>
+
+  <p>
+    Hoje é dia de modelação. Um asset por vez, sem dispersão.
+  </p>
+
+  <span class="badge" id="date"></span>
+
+  <div
+    class="rumi"
+    role="img"
+    aria-label="Detalhe decorativo inspirado na Rumi">
+  </div>
+</header>
+
+<section class="layout">
+
+<article class="card schedule">
+
+  <h2>Missões de hoje ✦</h2>
+
+  <p class="sub">
+    Foco exclusivo: MODELAGEM
+  </p>
+
+  <div id="slots"></div>
+
+  <div class="progress-label">
+    <span>Progresso da modelação</span>
+    <span id="percent">0%</span>
+  </div>
+
+  <div class="progress">
+    <div id="bar"></div>
+  </div>
+
+</article>
+
+
+<article class="card goal">
+
+  <h2>Meta da Selenne ♡</h2>
+
+  <p>
+    Finalizar a modelagem da picareta do Phey
+    e entregar os 6 assets da comissão do mercado.
+  </p>
+
+  <p>
+    <strong>Sem texturização hoje.</strong>
+    Primeiro a forma, depois o acabamento.
+  </p>
+
+</article>
+
+
+<article class="card targets">
+
+  <h2>Lembretes</h2>
+
+  <p class="sub">
+    Prioridades extras
+  </p>
+
+  <div id="targets"></div>
+
+  <button
+    type="button"
+    class="add"
+    id="add">
+    + lembrete
+  </button>
+
+</article>
+
+</section>
+
+<p class="footer">
+  Tudo salvo neste navegador. Hoje é modelação, Selenne. ✦
+</p>
+
+</main>
+
+
+<script>
+
+const key = 'selenne-modelacao-v3';
+
+const saved =
+  JSON.parse(localStorage.getItem(key) || '{}');
+
+const checked =
+  saved.checked || {};
+
+
+const data = [
+
+  [
+    '🪨 PHEY',
+    'Modelagem',
+    [
+      'Modelar picareta'
+    ]
+  ],
+
+  [
+    '🥩 COMISSÃO MERCADO',
+    'Modelagem',
+    [
+      'Modelar Meat Counter',
+      'Modelar Meat Display Tray',
+      'Modelar Freezer Unit',
+      'Modelar Freezer Kiosk',
+      'Modelar Bakery Shelf',
+      'Modelar Bread Basket'
+    ]
+  ]
+
+];
+
+
+const slots =
+  document.getElementById('slots');
+
+
+data.forEach((x,i)=>{
+
+  const e =
+    document.createElement('section');
+
+  e.className = 'slot';
+
+  e.innerHTML = `
+    <div class="time">
+      ${x[0]}
+      <span class="owner">
+        ${x[1]}
+      </span>
+    </div>
+
+    <h3>
+      Checklist de modelagem
+    </h3>
+  `;
+
+
+  x[2].forEach((t,j)=>{
+
+    const n = i + '-' + j;
+
+    const row =
+      document.createElement('label');
+
+    row.className = 'task';
+
+    row.innerHTML = `
+      <input
+        type="checkbox"
+        ${checked[n] ? 'checked' : ''}
+      >
+
+      <span>
+        ${t}
+      </span>
+    `;
+
+
+    row
+      .querySelector('input')
+      .onchange = z => {
+
+        checked[n] =
+          z.target.checked;
+
+        save();
+        progress();
+
+      };
+
+
+    e.append(row);
+
+  });
+
+
+  slots.append(e);
+
+});
+
+
+function save(){
+
+  localStorage.setItem(
+
+    key,
+
+    JSON.stringify({
+
+      checked,
+
+      targets:
+        [
+          ...document
+            .querySelectorAll('.target-input')
+        ]
+        .map(x => x.value)
+
+    })
+
+  );
+
+}
+
+
+function progress(){
+
+  const all =
+    document
+      .querySelectorAll('.task input')
+      .length;
+
+  const done =
+    [
+      ...document
+        .querySelectorAll('.task input:checked')
+    ]
+    .length;
+
+  const p =
+    all
+      ? Math.round(done / all * 100)
+      : 0;
+
+  document
+    .getElementById('percent')
+    .textContent = p + '%';
+
+  document
+    .getElementById('bar')
+    .style.width = p + '%';
+
+}
+
+
+const targets =
+  document.getElementById('targets');
+
+
+function target(v=''){
+
+  const e =
+    document.createElement('label');
+
+  e.className = 'target';
+
+  e.innerHTML = `
+    <span>✦</span>
+
+    <input
+      class="target-input"
+      placeholder="Novo lembrete..."
+    >
+  `;
+
+  e.querySelector('input').value = v;
+
+  e
+    .querySelector('input')
+    .oninput = save;
+
+  targets.append(e);
+
+}
+
+
+(
+  saved.targets || [
+    'Começar pelo Phey',
+    'Depois iniciar os 6 assets do mercado'
+  ]
+)
+.forEach(target);
+
+
+document
+  .getElementById('add')
+  .onclick = () => {
+
+    target();
+
+    targets
+      .lastElementChild
+      .querySelector('input')
+      .focus();
+
+    save();
+
+  };
+
+
+progress();
+
+
+document
+  .getElementById('date')
+  .textContent =
+    new Intl.DateTimeFormat(
+      'pt-BR',
+      {
+        weekday:'long',
+        day:'numeric',
+        month:'long'
+      }
+    )
+    .format(new Date());
+
+</script>
+
+</body>
+</html>
